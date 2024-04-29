@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    :root {
+      --primary-color: #ff0000;
+      --secondary-color: #333;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    nav ul li a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::before {
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo .my {
+      color: #fff;
+    }
+
+    .logo .rights {
+      color: var(--primary-color);
+    }
+
+    #register-container {
+      text-align: center;
+      margin-top: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      margin: 100px auto;
+    }
+
+    #register-container input,
+    #register-container select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    #register-container button {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    #register-container button:hover {
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+
+    #register-container a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #register-container a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><span class="my">MY</span> <span class="rights">Rights</span></div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Legal Help</a></li>
+      <li><a href="#">Helpline</a></li>
+      <li><a href="#" onclick="alert('Contact Us: getfit456@gmail.com , lovely professional university, phagwara punjab, 144411 9146598372, 9985625425')">Contact us</a></li>
+    </ul>
+  </nav>
+
+  <div id="register-container">
+    <h2>Register</h2>
+    <form id="register-form" action="log in.html">
+      <input type="text" id="full-name" placeholder="Full Name">
+      <input type="tel" id="phone-number" placeholder="Phone Number">
+      <div class="option-box">
+        <label for="nationality">Nationality:</label>
+        <select id="nationality">
+          <option value="Indian">Indian</option>
+          <option value="Foreigner">Foreigner</option>
+        </select>
+      </div>
+      <div id="country-box" class="option-box" style="display: none;">
+        <label for="country-name">Country Name:</label>
+        <input type="text" id="country-name" placeholder="Country Name">
+      </div>
+      <div class="option-box">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="option-box">
+        <label for="citizen-status">Are you a citizen or legal expert?</label>
+        <select id="citizen-status">
+          <option value="Citizen">Citizen</option>
+          <option value="Legal Expert">Legal Expert</option>
+        </select>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="log in.html">Login</a></p>
+  </div>
+
+  <script>
+    document.getElementById('nationality').addEventListener('change', function() {
+      var countryBox = document.getElementById('country-box');
+      if (this.value === 'Foreigner') {
+        countryBox.style.display = 'inline-block';
+      } else {
+        countryBox.style.display = 'none';
+      }
+    });
+
+    document.getElementById('register-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var fullName = document.getElementById('full-name').value;
+      var phoneNumber = document.getElementById('phone-number').value;
+      var nationality = document.getElementById('nationality').value;
+      var countryName = document.getElementById('country-name').value;
+      var gender = document.getElementById('gender').value;
+      var citizenStatus = document.getElementById('citizen-status').value;
+      
+      console.log('Full Name:', fullName);
+      console.log('Phone Number:', phoneNumber);
+      console.log('Nationality:', nationality);
+      if (nationality === 'Foreigner') {
+        console.log('Country Name:', countryName);
+      }
+      console.log('Gender:', gender);
+      console.log('Citizen Status:', citizenStatus);
+    });
+  </script>
+</body>
+</html>

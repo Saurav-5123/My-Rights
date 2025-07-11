@@ -4,80 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Right to Freedom of Religion</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #222;
-    }
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-    nav {
-      background-color: #222;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-    }
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #333;
+        }
 
-    .content-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
 
-    h2, h3 {
-      margin-top: 30px;
-      color: #444;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-    }
+        nav ul li {
+            margin-left: 30px;
+        }
 
-    p {
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
 
-    .input-container {
-      margin-top: 40px;
-      display: flex;
-      gap: 10px;
-    }
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
 
-    input[type="text"] {
-      flex: 1;
-      padding: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
+        nav ul li a:hover::before {
+            width: 100%;
+        }
 
-    .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      display: inline-block;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+        .logo .my {
+            color: #fff;
+        }
+
+        .logo .rights {
+            color: var(--primary-color);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .content-container p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content-container a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content-container a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            flex: 1;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <nav>My Rights</nav>
+    <nav>
+        <div class="logo"><span class="my">MY</span> <span class="rights">Rights</span></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Legal Help</a></li>
+            <li><a href="#">Helpline</a></li>
+            <li><a href="#" onclick="alert('Contact Us: getfit456@gmail.com , lovely professional university, phagwara punjab, 144411 9146598372, 9985625425')">Contact us</a></li>
+        </ul>
+    </nav>
+
 
   <div class="content-container">
     <h1>Right to Freedom of Religion</h1>
